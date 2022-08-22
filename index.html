@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.66.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/skeleton.css">
+<link rel="stylesheet" href="../css/custom.css">
+<link rel="alternate" href="index.xml" type="application/rss+xml" title="Speech Research">
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+<title>MeloForm: Generating Melody with Musical Form based on Expert Systems and Neural Networks</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		
+			
+		
+		
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="https://schema.org/BlogPosting">
+            <h1 class="entry-title" itemprop="headline">MeloForm: Generating Melody with Musical Form based on Expert Systems and Neural Networks</h1>
+			
+			<section itemprop="entry-text">
+				<br>
+<!-- <p>ArXiv: <a href="https://arxiv.org/pdf/2109.09617.pdf">arXiv:2109.09617</a></p> -->
+<h2 id="authors">Authors</h2>
+<ul>
+<li>Peiling Lu (Microsoft Research Asia) <a href="mailto:peil@microsoft.com">peil@microsoft.com</a></li>
+<li>Xu Tan^ (Microsoft Research Asia) <a href="mailto:xuta@microsoft.com">xuta@microsoft.com</a></li>
+<li>Botao Yu (Nanjing University) <a href="mailto:btu@smail.nju.edu.cn">btu@smail.nju.edu.cn</a></li>
+<li>Sheng Zhao (Microsoft Software Technology Center Asia) <a href="mailto:szhao@microsoft.com">szhao@microsoft.com</a></li>
+<li>Tao Qin (Microsoft Research Asia ) <a href="mailto:taoqin@microsoft.com">taoqin@microsoft.com</a></li>
+<li>Tie-Yan Liu (Microsoft Research) <a href="mailto:tyliu@microsoft.com">tyliu@microsoft.com</a></li>
+</ul>
+<p><small>^ Corresponding author.</small></p>
+<h2 id="abstract">Abstract</h2>
+<p>Human usually composes music by organizing elements according to the musical form to express music ideas. However, for neural network-based music generation, it is difficult to do so due to the lack of labelled data on musical form. In this paper, we develop MeloForm, a system that generates melody with musical form using expert systems and neural networks. Specifically, 1) we design an expert system to generate a melody by developing musical elements from motifs to phrases then to sections with repetitions and variations according to pre-given musical form; 2) considering the generated melody is lack of musical richness, we design a Transformer based refinement model to improve the melody without changing its musical form. MeloForm enjoys the advantages of precise musical form control by expert systems and musical richness learning via neural models. Both subjective and objective experimental evaluations demonstrate that MeloForm generates melodies with precise musical form control with 97.79% accuracy, and outperforms baseline systems in terms of subjective evaluation score by 0.75, 0.50, 0.86 and 0.89 in structure, thematic, richness and overall quality, without any labelled musical form data. Besides, MeloForm can support various kinds of forms, such as verse and chorus form, rondo form, variational form, sonata form, etc.</p>
+<h2 id="baseline-samples">Baseline Samples</h2>
+
+<table width="86%" border="1">
+    <tbody>
+      <tr>
+        <th width="22%" style="text-align: center" scope="col">Melody from MeloForm</th>
+        <th width="26%" style="text-align: center" scope="col">Description</th>
+      </tr>
+      
+      <tr>
+        <td width="26%" style="text-align: center">
+          <audio controls="controls">
+              <source src="./demo/meloform/1-melody.mp3" autoplay="">Your browser does not support the audio element.
+          </audio>
+        <td width="26%" style="text-align: left">
+          <p>Section A: (phrase a1: 00:00-00:09; 00:09-00:17; 00:17-00:25);</p>
+          <p>Section B: (phrase b1: 00:25-00:33; 00:33-00:41; 00:41-00:49);</p>
+          <p>Section A: (phrase a1: 00:49-00:57; 00:57-1:05);</p>
+          <p>Section B: (phrase b1: 1:05-1:13; 1:13-1:21);</p>
+          <p>Section A: (phrase a1: 1:21-1:29; 1:29-1:39).</p>
+      </tr>
+      <tr>
+        <td width="26%" style="text-align: center">
+          <audio controls="controls">
+              <source src="./demo/meloform/2-melody.mp3" autoplay="">Your browser does not support the audio element.
+          </audio>
+        <td width="26%" style="text-align: left">
+          <p>Section A: (phrase a1: 00:00-00:07; 00:07-00:15);</p>
+          <p>Section B: (phrase b1: 00:15-00:23; 00:23-00:31);</p>
+          <p>Section A: (phrase a1: 00:31-00:39; 00:39-00:47);</p>
+      </tr>
+      <tr>
+        <td width="26%" style="text-align: center">
+          <audio controls="controls">
+              <source src="./demo/meloform/3-melody.mp3" autoplay="">Your browser does not support the audio element.
+          </audio>
+        <td width="26%" style="text-align: left">
+          <p>Section A: (phrase a1: 00:00-00:08; 00:08-00:16);</p>
+          <p>Section B: (phrase b1: 00:16-00:24; 00:24-00:32);</p>
+          <p>Section A: (phrase a1: 00:32-00:40; 00:40-00:48);</p>
+          <p>Section A: (phrase a1: 00:48-00:56; 00:56-01:04);</p>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+			</section>
+		</article>
+	</main>
+
+
+	
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139981676-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+ <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+
+
+
+</body>
+</html>
