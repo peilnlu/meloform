@@ -53,8 +53,8 @@ Abstract Adaptive text to speech (TTS) can synthesize new voices in zero-shot sc
     </item>
     
     <item>
-      <title>TeleMelody: Lyric-to-Melody Generation with a Template-Based Two-Stage Method</title>
-      <link>https://speechresearch.github.io/telemelody/</link>
+      <title>Meloform</title>
+      <link>https://peilnlu.github.io/meloform/</link>
       <pubDate>Tue, 21 Sep 2021 12:30:00 +0901</pubDate>
       
       <guid>https://speechresearch.github.io/telemelody/</guid>
